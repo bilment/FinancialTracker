@@ -1,27 +1,38 @@
 package com.pluralsight;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 public class Transaction {
 
-    private LocalDateTime dateTime;
+    private LocalDate date;
+    private LocalTime time;
     private String description;
     private String vendor;
     private double amount;
 
-    public Transaction(LocalDateTime dateTime, String description, String vendor, double amount) {
-        this.dateTime = dateTime;
+    public Transaction(LocalDate date, LocalTime time, String description, String vendor, double amount) {
+        this.date = date;
+        this.time = time;
         this.description = description;
         this.vendor = vendor;
         this.amount = amount;
     }
 
-    public LocalDateTime getDateTime() {
-        return dateTime;
+    public LocalDate getDate() {
+        return date;
     }
 
-    public void setDateTime(LocalDateTime dateTime) {
-        this.dateTime = dateTime;
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    public LocalTime getTime() {
+        return time;
+    }
+
+    public LocalTime setTime(LocalTime time) {
+        this.time = time;
     }
 
     public String getDescription() {
@@ -49,6 +60,7 @@ public class Transaction {
     }
     // Override
     public String toString() {
-        return dateTime.toString() + " | " + description + " | " + vendor + " | " + amount;
+        return date.toString() + " " + time.toString() + " | " + description + " | " + vendor + " | " + amount;
     }
+
 }

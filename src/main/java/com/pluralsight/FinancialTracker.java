@@ -1,6 +1,10 @@
 package com.pluralsight;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -60,6 +64,28 @@ public class FinancialTracker {
         // For example: 2023-04-15|10:13:25|ergonomic keyboard|Amazon|-89.50
         // After reading all the transactions, the file should be closed.
         // If any errors occur, an appropriate error message should be displayed.
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] parts = line.split("\\|");
+
+                // Creating LocalDateTime with Date and time.
+                LocalDate date = LocalDate.parse(parts[0], DATE_FORMATTER);
+                LocalTime time = LocalTime.parse(parts[1], TIME_FORMATTER);
+
+                // Getting other fields as Vendor and Amount
+                String description = parts[2];
+                String vendor = parts[3];
+                double amount = Double.parseDouble(parts[4]);
+
+                // Creating new Transaction object and add to list.
+                Transaction transaction = new Transaction(date, time, description, vendor, amount);
+                transactions.add(transaction);
+            }
+        } catch (IOException e) {
+            System.out.println("Error has occurred: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 
     private static void addDeposit(Scanner scanner) {
