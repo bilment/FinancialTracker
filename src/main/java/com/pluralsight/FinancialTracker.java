@@ -94,6 +94,31 @@ public class FinancialTracker {
         // The amount should be a positive number.
         // After validating the input, a new `Transaction` object should be created with the entered values.
         // The new deposit should be added to the `transactions` ArrayList.
+
+        // DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+
+        System.out.println("Enter the date of the deposit (yyyy-MM-dd):");
+        LocalDate date = LocalDate.parse(scanner.nextLine());
+
+        System.out.println("Enter the time of the deposit(HH:mm:ss):");
+        LocalTime time = LocalTime.parse(scanner.nextLine());
+
+        System.out.println("Enter the description:");
+        String description = scanner.nextLine();
+
+        System.out.println("Enter the vendor:");
+        String vendor = scanner.nextLine();
+
+        System.out.println("Enter the amount of deposit:");
+        double amount = scanner.nextDouble();
+
+        if (amount <= 0) {
+            System.out.println("Invalid input.");
+            return;
+        }
+
+        transactions.add(new Transaction(date, time, description, vendor, amount));
+
     }
 
     private static void addPayment(Scanner scanner) {
