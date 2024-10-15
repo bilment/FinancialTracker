@@ -79,11 +79,13 @@ public class FinancialTracker {
                 double amount = Double.parseDouble(parts[4]);
 
                 // Creating new Transaction object and add to list.
-                Transaction transaction = new Transaction(date, time, description, vendor, amount);
-                transactions.add(transaction);
+                transactions.add(new Transaction(date, time, description, vendor, amount));
+
+                br.close();
             }
-        } catch (IOException e) {
-            System.out.println("Error has occurred: " + e.getMessage());
+
+        } catch (Exception e) {
+            System.out.println("Error has occurred:");
             e.printStackTrace();
         }
     }
@@ -95,12 +97,12 @@ public class FinancialTracker {
         // After validating the input, a new `Transaction` object should be created with the entered values.
         // The new deposit should be added to the `transactions` ArrayList.
 
-        // DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         System.out.println("Enter the date of the deposit (yyyy-MM-dd):");
-        LocalDate date = LocalDate.parse(scanner.nextLine());
+        LocalDate date = LocalDate.parse(scanner.nextLine(), formatter);
 
         System.out.println("Enter the time of the deposit(HH:mm:ss):");
-        LocalTime time = LocalTime.parse(scanner.nextLine());
+        LocalTime time = LocalTime.parse(scanner.nextLine(), formatter);
 
         System.out.println("Enter the description:");
         String description = scanner.nextLine();
@@ -112,7 +114,7 @@ public class FinancialTracker {
         double amount = scanner.nextDouble();
 
         if (amount <= 0) {
-            System.out.println("Invalid input.");
+            System.out.println("Invalid input. Amount cannot be lower than 0 or equal.");
             return;
         }
 
@@ -126,6 +128,31 @@ public class FinancialTracker {
         // The amount received should be a positive number then transformed to a negative number.
         // After validating the input, a new `Transaction` object should be created with the entered values.
         // The new payment should be added to the `transactions` ArrayList.
+        System.out.println("Enter the date of the payment (yyyy-MM-dd):");
+        LocalDate date = LocalDate.parse(scanner.nextLine());
+
+        System.out.println("Enter the time of the payment(HH:mm:ss):");
+        LocalTime time = LocalTime.parse(scanner.nextLine());
+
+        System.out.println("Enter the description:");
+        String description = scanner.nextLine();
+
+        System.out.println("Enter the vendor:");
+        String vendor = scanner.nextLine();
+
+        System.out.println("Enter the amount of payment:");
+        double amount = scanner.nextDouble();
+
+        if (amount < 0) {
+            System.out.println("Invalid input. Payment cannot be lower than 0 or equal.");
+            return;
+        }
+
+        amount = -Math.abs(amount);
+
+        transactions.add(new Transaction(date, time, description, vendor, amount));
+
+        System.out.println("You made a payment.");
     }
 
     private static void ledgerMenu(Scanner scanner) {

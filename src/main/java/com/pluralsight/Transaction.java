@@ -32,7 +32,7 @@ public class Transaction {
     }
 
     public LocalTime setTime(LocalTime time) {
-        this.time = time;
+        return this.time = time;
     }
 
     public String getDescription() {
