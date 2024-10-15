@@ -96,7 +96,6 @@ public class FinancialTracker {
         // The new deposit should be added to the `transactions` ArrayList.
 
         // DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-
         System.out.println("Enter the date of the deposit (yyyy-MM-dd):");
         LocalDate date = LocalDate.parse(scanner.nextLine());
 
