@@ -306,7 +306,7 @@ public class FinancialTracker {
                 found = true;
             }
         }
-
+        
         if (!found) {
             System.out.println("No transactions found for the specified vendor: " + vendor);
         }
