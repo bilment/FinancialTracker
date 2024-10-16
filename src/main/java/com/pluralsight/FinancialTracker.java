@@ -249,6 +249,11 @@ public class FinancialTracker {
                 case "2":
                     // Generate a report for all transactions within the previous month,
                     // including the date, time, description, vendor, and amount for each transaction.
+                    LocalDate startOfPreviousMonth = LocalDate.now().minusMonths(1).withDayOfMonth(1);
+                    LocalDate endOfPreviousMonth = LocalDate.now().withDayOfMonth(1).minusDays(1);
+                    filterTransactionsByDate(startOfPreviousMonth, endOfPreviousMonth);
+                    break;
+
                 case "3":
                     // Generate a report for all transactions within the current year,
                     // including the date, time, description, vendor, and amount for each transaction.
