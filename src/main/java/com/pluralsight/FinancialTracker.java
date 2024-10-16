@@ -1,8 +1,6 @@
 package com.pluralsight;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
@@ -121,6 +119,14 @@ public class FinancialTracker {
 
         transactions.add(new Transaction(date, time, description, vendor, amount));
 
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(FILE_NAME, true))) {
+            bw.write(date + "|" + time + "|" + description + "|" + vendor + "|" + amount);
+            bw.newLine();
+            System.out.println("Deposit added.");
+        } catch (Exception e) {
+            System.out.println("An error has occurred.");
+            e.printStackTrace();
+        }
 
     }
 
@@ -276,7 +282,7 @@ public class FinancialTracker {
                     String vendor = scanner.nextLine().trim();
                     filterTransactionsByVendor(vendor);
                     break;
-                    
+
                 case "0":
                     running = false;
                 default:
