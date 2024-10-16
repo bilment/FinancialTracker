@@ -130,7 +130,7 @@ public class FinancialTracker {
         // The amount received should be a positive number then transformed to a negative number.
         // After validating the input, a new `Transaction` object should be created with the entered values.
         // The new payment should be added to the `transactions` ArrayList.
-        
+
         System.out.println("Enter the date of the payment (yyyy-MM-dd):");
         LocalDate date = LocalDate.parse(scanner.nextLine(), DATE_FORMATTER);
 
@@ -295,5 +295,20 @@ public class FinancialTracker {
         // The method loops through the transactions list and checks each transaction's vendor name against the specified vendor name.
         // Transactions with a matching vendor name are printed to the console.
         // If no transactions match the specified vendor name, the method prints a message indicating that there are no results.
+        boolean found = false;
+        System.out.println("Date | Time | Description | Vendor | Amount");
+        System.out.println("-----------------------------------------------------");
+
+        for (Transaction transaction : transactions) {
+
+            if (transaction.getVendor().equalsIgnoreCase(vendor)) {
+                System.out.println(transaction);
+                found = true;
+            }
+        }
+
+        if (!found) {
+            System.out.println("No transactions found for the specified vendor: " + vendor);
+        }
     }
 }
