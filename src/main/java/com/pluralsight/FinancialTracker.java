@@ -161,7 +161,14 @@ public class FinancialTracker {
 
         transactions.add(new Transaction(date, time, description, vendor, amount));
 
-        System.out.println("You made a payment.");
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(FILE_NAME, true))) {
+            bw.write(date + "|" + time + "|" + description + "|" + vendor + "|" + amount);
+            bw.newLine();
+            System.out.println("Payment added.");
+        } catch (Exception e) {
+            System.out.println("An error has occured. ");
+            e.printStackTrace();
+        }
     }
 
     private static void ledgerMenu(Scanner scanner) {
