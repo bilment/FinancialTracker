@@ -81,8 +81,9 @@ public class FinancialTracker {
                 // Creating new Transaction object and add to list.
                 transactions.add(new Transaction(date, time, description, vendor, amount));
 
-                br.close();
+
             }
+
 
         } catch (Exception e) {
             System.out.println("Error has occurred:");
@@ -97,12 +98,12 @@ public class FinancialTracker {
         // After validating the input, a new `Transaction` object should be created with the entered values.
         // The new deposit should be added to the `transactions` ArrayList.
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+
         System.out.println("Enter the date of the deposit (yyyy-MM-dd):");
-        LocalDate date = LocalDate.parse(scanner.nextLine(), formatter);
+        LocalDate date = LocalDate.parse(scanner.nextLine(), DATE_FORMATTER);
 
         System.out.println("Enter the time of the deposit(HH:mm:ss):");
-        LocalTime time = LocalTime.parse(scanner.nextLine(), formatter);
+        LocalTime time = LocalTime.parse(scanner.nextLine(), TIME_FORMATTER);
 
         System.out.println("Enter the description:");
         String description = scanner.nextLine();
@@ -120,6 +121,7 @@ public class FinancialTracker {
 
         transactions.add(new Transaction(date, time, description, vendor, amount));
 
+
     }
 
     private static void addPayment(Scanner scanner) {
@@ -128,11 +130,12 @@ public class FinancialTracker {
         // The amount received should be a positive number then transformed to a negative number.
         // After validating the input, a new `Transaction` object should be created with the entered values.
         // The new payment should be added to the `transactions` ArrayList.
+        
         System.out.println("Enter the date of the payment (yyyy-MM-dd):");
-        LocalDate date = LocalDate.parse(scanner.nextLine());
+        LocalDate date = LocalDate.parse(scanner.nextLine(), DATE_FORMATTER);
 
         System.out.println("Enter the time of the payment(HH:mm:ss):");
-        LocalTime time = LocalTime.parse(scanner.nextLine());
+        LocalTime time = LocalTime.parse(scanner.nextLine(), TIME_FORMATTER);
 
         System.out.println("Enter the description:");
         String description = scanner.nextLine();
@@ -143,7 +146,7 @@ public class FinancialTracker {
         System.out.println("Enter the amount of payment:");
         double amount = scanner.nextDouble();
 
-        if (amount < 0) {
+        if (amount <= 0) {
             System.out.println("Invalid input. Payment cannot be lower than 0 or equal.");
             return;
         }
