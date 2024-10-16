@@ -260,10 +260,15 @@ public class FinancialTracker {
                     LocalDate startOfCurrentYear = LocalDate.now().withDayOfYear(1);
                     filterTransactionsByDate(startOfCurrentYear, LocalDate.now());
                     break;
-                    
+
                 case "4":
                     // Generate a report for all transactions within the previous year,
                     // including the date, time, description, vendor, and amount for each transaction.
+                    LocalDate startOfPreviousYear = LocalDate.now().minusYears(1).withDayOfYear(1);
+                    LocalDate endOfPreviousYear = LocalDate.now().withDayOfYear(1).minusDays(1);
+                    filterTransactionsByDate(startOfPreviousYear, endOfPreviousYear);
+                    break;
+                    
                 case "5":
                     // Prompt the user to enter a vendor name, then generate a report for all transactions
                     // with that vendor, including the date, time, description, vendor, and amount for each transaction.
