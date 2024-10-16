@@ -268,10 +268,15 @@ public class FinancialTracker {
                     LocalDate endOfPreviousYear = LocalDate.now().withDayOfYear(1).minusDays(1);
                     filterTransactionsByDate(startOfPreviousYear, endOfPreviousYear);
                     break;
-                    
+
                 case "5":
                     // Prompt the user to enter a vendor name, then generate a report for all transactions
                     // with that vendor, including the date, time, description, vendor, and amount for each transaction.
+                    System.out.println("Enter vendor name: ");
+                    String vendor = scanner.nextLine().trim();
+                    filterTransactionsByVendor(vendor);
+                    break;
+                    
                 case "0":
                     running = false;
                 default:
