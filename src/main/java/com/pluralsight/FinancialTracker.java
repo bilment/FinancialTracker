@@ -242,13 +242,16 @@ public class FinancialTracker {
                 case "1":
                     // Generate a report for all transactions within the current month,
                     // including the date, time, description, vendor, and amount for each transaction.
+                    LocalDate startOfCurrentMonth = LocalDate.now().withDayOfMonth(1);
+                    filterTransactionsByDate(startOfCurrentMonth, LocalDate.now());
+                    break;
+
                 case "2":
                     // Generate a report for all transactions within the previous month,
                     // including the date, time, description, vendor, and amount for each transaction.
                 case "3":
                     // Generate a report for all transactions within the current year,
                     // including the date, time, description, vendor, and amount for each transaction.
-
                 case "4":
                     // Generate a report for all transactions within the previous year,
                     // including the date, time, description, vendor, and amount for each transaction.
@@ -306,7 +309,7 @@ public class FinancialTracker {
                 found = true;
             }
         }
-        
+
         if (!found) {
             System.out.println("No transactions found for the specified vendor: " + vendor);
         }
