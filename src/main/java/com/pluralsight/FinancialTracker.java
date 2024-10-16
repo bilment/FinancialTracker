@@ -205,6 +205,12 @@ public class FinancialTracker {
     private static void displayDeposits() {
         // This method should display a table of all deposits in the `transactions` ArrayList.
         // The table should have columns for date, time, description, vendor, and amount.
+        System.out.println("Date | Time | Description | Vendor | Amount (Deposits)");
+        for (Transaction transaction : transactions) {
+            if (transaction.getAmount() > 0) {
+                System.out.println(transaction);
+            }
+        }
     }
 
     private static void displayPayments() {
