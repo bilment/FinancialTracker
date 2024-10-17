@@ -43,6 +43,8 @@ Follow these steps to get your application running within IntelliJ IDEA:
 
 - addDeposit method has been demonstrated. [addDeposit .png](imgs/addDeposit%20.png)
 - addPayment method has been demonstrated. [addPayment.png](imgs/addPayment.png)
+- LedgerMenu has been demonstrated. [All Ledger Menu.png](imgs/All%20Ledger%20Menu.png)
+- Show Deposits has been demonstrated. [Deposits.png](imgs/Deposits.png)
 
 ## Future Work
 
