@@ -45,6 +45,9 @@ Follow these steps to get your application running within IntelliJ IDEA:
 - addPayment method has been demonstrated. [addPayment.png](imgs/addPayment.png)
 - LedgerMenu has been demonstrated. [All Ledger Menu.png](imgs/All%20Ledger%20Menu.png)
 - Show Deposits has been demonstrated. [Deposits.png](imgs/Deposits.png)
+- Show Payments has been demonstrated. [Payments.png](imgs/Payments.png)
+- Search by Vendor has been demonstrated. [Search by Vendor.png](imgs/Search%20by%20Vendor.png)
+- Year to Date has been demonstrated. [Year To Date.png](imgs/Year%20To%20Date.png)
 
 ## Future Work
 
