@@ -2,16 +2,17 @@
 
 ## Description of the Project
 
-Briefly describe what this Java console application does. Mention its purpose and who the intended users are. Explain the main functionality and what problems it aims to solve.
-
-![Class Diagram](path/to/your/class_diagram.png)
+This is a simple Java application called "Financial Tracker", this allows users to record and manage their transactions, as deposits and payments. Users can enter details like the date, time, description, vendor, and amount for each transaction. 
+The application helps users keep track of their finances by storing transaction data in a file and providing reports for analysis.
+That was designed for users who want to keep a basic record of their spending and income.
 
 ## User Stories
 
 List the user stories that guided the development of your application. Format these stories as: "As a [type of user], I want [some goal] so that [some reason]."
 
-- As a user, I want to be able to input my data, so that the application can process it accordingly.
-- As a user, I want to receive immediate feedback, so I can understand what to do next.
+- As a user, I want to add a deposit by entering the date, time, description, vendor, and amount so that I can record my income transactions.
+- As a user, I want to view only my deposits so that I can quickly see all of my income sources.
+- As a user, I want my transactions to be saved to a file so that my data is preserved even after I close the application.
 
 ## Setup
 
@@ -27,44 +28,42 @@ Instructions on how to set up and run the project using IntelliJ IDEA.
 Follow these steps to get your application running within IntelliJ IDEA:
 
 1. Open IntelliJ IDEA.
-2. Select "Open" and navigate to the directory where you cloned or downloaded the project.
-3. After the project opens, wait for IntelliJ to index the files and set up the project.
-4. Find the main class with the `public static void main(String[] args)` method.
-5. Right-click on the file and select 'Run 'YourMainClassName.main()'' to start the application.
+2. Select "Open" and navigate to the folder where you have the project files.
+3. Wait for IntelliJ to index the project files and set everything up.
+4. Find the main class (FinancialTracker) with the public static void main(String[] args) method.
+5. Follow the instructions in the console to add deposits, make payments, and generate reports.
 
 ## Technologies Used
 
-- Java: Mention the version you are using.
-- Any additional libraries or frameworks used in the project.
+- Java: Version 17.
+- IntelliJ IDEA.
+
 
 ## Demo
 
-Include screenshots or GIFs that show your application in action. Use tools like [Giphy Capture](https://giphy.com/apps/giphycapture) to record a GIF of your application.
-
-![Application Screenshot](path/to/your/screenshot.png)
 
 ## Future Work
 
 Outline potential future enhancements or functionalities you might consider adding:
 
-- Additional feature to be developed.
-- Improvement of current functionalities.
+- Edit and Delete Transactions: Allow users to edit or delete transactions.
+- Advanced Search: Add more search options like searching by description or amount.
+- Spending Limits and Notifications: Introduce spending limits notify users.
 
 ## Resources
 
 List resources such as tutorials, articles, or documentation that helped you during the project.
 
-- [Java Programming Tutorial](https://www.example.com)
-- [Effective Java](https://www.example.com)
+- https://www.w3schools.com/java
+- https://www.geeksforgeeks.org/localdate-withdayofyear-method-in-java-with-examples/
 
 ## Team Members
 
-- **Name 1** - Specific contributions or roles.
-- **Name 2** - Specific contributions or roles.
+- **Name 1** - Taha Bilmen.
 
 ## Thanks
 
 Express gratitude towards those who provided help, guidance, or resources:
 
-- Thank you to [Mentor's Name] for continuous support and guidance.
+- Thank you to [Raymond] for continuous support and guidance.
 - A special thanks to all teammates for their dedication and teamwork.
