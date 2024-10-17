@@ -1,5 +1,7 @@
 # Project Title
 
+Financial Tracker Capstone
+
 ## Description of the Project
 
 This is a simple Java application called "Financial Tracker", this allows users to record and manage their transactions, as deposits and payments. Users can enter details like the date, time, description, vendor, and amount for each transaction. 
@@ -63,6 +65,8 @@ List resources such as tutorials, articles, or documentation that helped you dur
 
 - https://www.w3schools.com/java
 - https://www.geeksforgeeks.org/localdate-withdayofyear-method-in-java-with-examples/
+- https://yearup.brightspace.com/d2l/home/8605
+
 
 ## Team Members
 

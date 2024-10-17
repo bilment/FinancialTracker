@@ -62,12 +62,19 @@ public class FinancialTracker {
         // For example: 2023-04-15|10:13:25|ergonomic keyboard|Amazon|-89.50
         // After reading all the transactions, the file should be closed.
         // If any errors occur, an appropriate error message should be displayed.
+
+        // Bu metod fileName islemlerini okuyarak transaction listesine ekliyor. Bf ile okuma, filereader ile dosyayi aciyoruz.
+        // LocalDate ve time ile dosyalari parse ile uygun fomrata donusturuyoruz.
+        // Double parse ile veriyi doubla donusturuyoruz.
+        // Tum bilgileri kullanarak yeni bir Transaction nesnesi olusturuyoruz bu nesneyi Arrayliste ekliyoruz.
+        // Double parse string tipindeki veriyi double a donusturuyor. BufferedReader ile okuma oldugunda her veri String olarak gelir.
+
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] parts = line.split("\\|");
 
-                // Creating LocalDateTime with Date and time.
+                // Creating LocalDate and LocalTime with Date and time.
                 LocalDate date = LocalDate.parse(parts[0], DATE_FORMATTER);
                 LocalTime time = LocalTime.parse(parts[1], TIME_FORMATTER);
 
@@ -76,7 +83,7 @@ public class FinancialTracker {
                 String vendor = parts[3];
                 double amount = Double.parseDouble(parts[4]);
 
-                // Creating new Transaction object and add to list.
+                // Creating new Transaction object and add to arraylist.
                 transactions.add(new Transaction(date, time, description, vendor, amount));
 
 
@@ -96,6 +103,7 @@ public class FinancialTracker {
         // After validating the input, a new `Transaction` object should be created with the entered values.
         // The new deposit should be added to the `transactions` ArrayList.
 
+        //BufferedWriter ve FileWriter kullanarak dosyaya eklemek append modu acilir. true parametresi ile.
 
         System.out.println("Enter the date of the deposit (yyyy-MM-dd):");
         LocalDate date = LocalDate.parse(scanner.nextLine(), DATE_FORMATTER);
@@ -199,6 +207,7 @@ public class FinancialTracker {
                     break;
                 case "H":
                     running = false;
+                    break;
                 default:
                     System.out.println("Invalid option");
                     break;
@@ -314,6 +323,10 @@ public class FinancialTracker {
             LocalDate transactionDate = transaction.getDate();
 
             if (!transactionDate.isBefore(startDate) && !transactionDate.isAfter(endDate)) {
+                // islem tarihi start date den once degil ise true yani esit veya sonraki tarih,
+                // islem tarihi bitis tarihinden sonra degil ise true olur
+                // yani islem bu iki tarih arasinda olacaktir.
+                // startdate and enddate are included.
                 System.out.println(transaction);
                 found = true;
             }
