@@ -41,6 +41,8 @@ Follow these steps to get your application running within IntelliJ IDEA:
 
 ## Demo
 
+- addDeposit method has been demonstrated. [addDeposit .png](imgs/addDeposit%20.png)
+- addPayment method has been demonstrated. [addPayment.png](imgs/addPayment.png)
 
 ## Future Work
 
