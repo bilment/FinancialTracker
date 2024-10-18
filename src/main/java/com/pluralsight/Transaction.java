@@ -58,7 +58,7 @@ public class Transaction {
     public void setAmount(double amount) {
         this.amount = amount;
     }
-    // Override
+
     public String toString() {
         return date.toString() + " " + time.toString() + " | " + description + " | " + vendor + " | " + amount;
     }

@@ -4,18 +4,26 @@ Financial Tracker Capstone
 
 ## Description of the Project
 
-This is a simple Java application called "Financial Tracker", this allows users to record and manage their transactions, as deposits and payments. Users can enter details like the date, time, description, vendor, and amount for each transaction. 
-The application helps users keep track of their finances by storing transaction data in a file and providing reports for analysis.
-That was designed for users who want to keep a basic record of their spending and income.
+- This is a simple Java application called "Financial Tracker", this allows users to record and manage their transactions, as deposits and payments. 
+- Users can enter details like the date, time, description, vendor, and amount for each transaction. 
+- The application helps users keep track of their finances by storing transaction data in a file and providing reports for analysis.
+- That was designed for users who want to keep a basic record of their payments and deposits.
 
 ## User Stories
 
 List the user stories that guided the development of your application. Format these stories as: "As a [type of user], I want [some goal] so that [some reason]."
 
-- As a user, I want to add a deposit by entering the date, time, description, vendor, and amount so that I can record my income transactions.
-- As a user, I want to view only my deposits so that I can quickly see all of my income sources.
+- As a user, I want to have the home screen, so that I can easily navigate my transactions between options.
+- As a user, I want to add a deposit by entering the date, time, description, vendor, and amount so that I can record transactions.
+- As a user, I want to add a payment by entering the date, time, description, vendor, and amount so that I can record my expense transactions.
 - As a user, I want my transactions to be saved to a file so that my data is preserved even after I close the application.
-
+- As a user, I want to access a ledger menu, allowing me to easily navigate through different transaction display screens.
+- As a user, I want to view all of my transactions in a list so that I can see a complete overview of my financial activity.
+- As a user, I want to view only my deposits so that I can quickly see all of my income sources.
+- As a user, I want to view only my payments so that I can focus on my expenses and manage my budget.
+- As a user, I want to have an option for report menu, so that I can navigate different filtering options.
+- As a user, I want to see transactions within a specific date range so that I can analyze my spending or income over a particular period.
+- As a user, I want to search for transactions by vendor so that I can easily find all transactions with a specific vendor.
 ## Setup
 
 Instructions on how to set up and run the project using IntelliJ IDEA.
@@ -43,14 +51,14 @@ Follow these steps to get your application running within IntelliJ IDEA:
 
 ## Demo
 
-- addDeposit method has been demonstrated. [addDeposit .png](imgs/addDeposit%20.png)
-- addPayment method has been demonstrated. [addPayment.png](imgs/addPayment.png)
-- LedgerMenu has been demonstrated. [All Ledger Menu.png](imgs/All%20Ledger%20Menu.png)
-- Show Deposits has been demonstrated. [Deposits.png](imgs/Deposits.png)
-- Show Payments has been demonstrated. [Payments.png](imgs/Payments.png)
-- Search by Vendor has been demonstrated. [Search by Vendor.png](imgs/Search%20by%20Vendor.png)
-- Year to Date has been demonstrated. [Year To Date.png](imgs/Year%20To%20Date.png)
-
+- addDeposit method has been demonstrated. ![addDeposit .png](imgs/addDeposit%20.png)
+- addPayment method has been demonstrated. ![addPayment.png](imgs/addPayment.png)
+- LedgerMenu has been demonstrated. ![All-Ledger-Menu.png](imgs/All-Ledger-Menu.png)
+- Show Deposits has been demonstrated. ![Deposits.png](imgs/Deposits.png)
+- Show Payments has been demonstrated. ![Payments.png](imgs/Payments.png)
+- Search by Vendor has been demonstrated. ![Search-by-Vendor.png](imgs/Search-by-Vendor.png)
+- Year to Date has been demonstrated. ![Year-To-Date.png](imgs/Year-To-Date.png)
+- 
 ## Future Work
 
 Outline potential future enhancements or functionalities you might consider adding:
